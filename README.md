@@ -1,6 +1,6 @@
 # 실전! 스프링 부트와 JPA 활용1
-    1.프로젝트 생성
-    2.라이브러리 살펴보기 - 
+    1.프로젝트 생성 -> start.spring.io
+    2.라이브러리 살펴보기
         - lombok: @Getter, @Setter, @Builder
         - devtools: Recompile 
     3.View 환경 설정 - thymeleaf
@@ -12,4 +12,13 @@
         3) localhost:8082 >> 접속 (최초1번은 세션키 유지)
         4) JDBC URL=jdbc:h2:~/jpashop >> .db 파일 생성
         5) jdbc:h2:tcp://localhost/~/jpashop >> 네트워크 모드로 접속
+    5.JPA와 DB 설정
+        1) properties -> yml (datasource, jpa, logging)
+          - docs.spring.io/spring-boot/docs/current/reference/html
+        2) Member 등록
+          - Entity: 필드 생성 
+          - Repository: @PersistenceContext -> EntityManager -> CRUD 메소드 작성 
+        3) Test Code 작성
+          - @SpringBootTest >> @Test, @Transactional, @Rollback(value = false)
+
 
