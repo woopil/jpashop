@@ -20,5 +20,6 @@
           - Repository: @PersistenceContext -> EntityManager -> CRUD 메소드 작성 
         3) Test Code 작성
           - @SpringBootTest >> @Test, @Transactional, @Rollback(value = false)
+          - 같은 Transactional 안에서 키값이 같을 경우엔 같은 엔티티로 인식 (영속성 컨텍스트-1차캐시)
 
 
