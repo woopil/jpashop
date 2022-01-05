@@ -1,4 +1,4 @@
-# 실전! 스프링 부트와 JPA 활용1
+# 실전! 스프링 부트와 JPA 활용1 테스트
     1.프로젝트 생성 -> start.spring.io
     2.라이브러리 살펴보기
         - lombok: @Getter, @Setter, @Builder
