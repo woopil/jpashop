@@ -59,3 +59,19 @@
          - 1:N 연관관계 >> Category : List
         4) 값 타입은 변경 불가능하게 클래스 설계
          - @Embeddable + 생성자 초기화 
+    10.엔티티 설계시 주의점
+        1) 엔티티에는 가급적 Setter를 사용하지 말자.
+        2) 모든 연관관계는 지연로딩으로 설정(LAZY) + fetch join 기능 사용
+         - @XToOne 기본 전략이 'FetchType.EAGER' -> 'FetchType.LAZY' 로 변경
+         - JPQL N + 1 이슈
+        3) 컬렉션은 필드에서 초기화 하자 -> null 문제에서 안전 -> 하이버네이트 내장 컬렉션 이슈 방지
+         - private List<OrderItem> orderItems = new ArrayList<>();
+        4) 테이블, 컬럼명 생성 전략 -> 논리명(명시적 지정 X), 문리명(일괄 반영 XXX_name)
+         - {SpringPhysicalNamingStrategy} => 필드명 그대로 사용
+          - 카멜 케이스 -> 언더스코어 (memberPoint -> member_point)
+          - .(점) -> _(언더스코어)
+          - 대문자 -> 소문자
+        5) 영속성 전이 >> (cascade = CascadeType.ALL)
+         - 상위 엔티티에서 하위 엔티티로 모든 작업 전파
+        6) 양방향 연관관계 메서드 >> 핵심적으로 컨트롤하는 곳에 코드 작성
+         - 양방향 객체 설정 ( Order.class <-> Member.class ) 
