@@ -1,5 +1,6 @@
 package jpabook.jpashop;
 
+import jpabook.jpashop.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,7 @@ class MemberRepositoryTest {
     public void testMember() {
         //given
         Member member = new Member();
-        member.setUserName("CWP");
+        member.setName("CWP2");
 
         //when
         final Long saveId = memberRepository.save(member);
