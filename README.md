@@ -74,4 +74,21 @@
         5) 영속성 전이 >> (cascade = CascadeType.ALL)
          - 상위 엔티티에서 하위 엔티티로 모든 작업 전파
         6) 양방향 연관관계 메서드 >> 핵심적으로 컨트롤하는 곳에 코드 작성
-         - 양방향 객체 설정 ( Order.class <-> Member.class ) 
+         - 양방향 객체 설정 ( Order.class <-> Member.class )
+    11.애플리케이션 아키텍처 - AA
+        1) 계층형 구조 사용
+         - Controller, Web: 웹 계층
+         - Service: 비즈니스 로직, 트랜잭션 처리
+         - Repository: JPA를 직접 사용하는 계층, 엔티티 매니저 사용
+         - Domain: 엔티티가 모여 있는 계층, 모든 계층에서 사용
+        2) 패키지 구조 > jpashop.
+         - domain
+         - exception
+         - repository
+         - service
+         - web
+    12.회원 리포지토리 개발
+        1) @PersistenceContext EntityManager 객체 생성
+        2) em.persists = save(), em.find = find()
+        3) JPQL 작성 >> 객체 대상 쿼리
+    13.회원 서비스 개발 
