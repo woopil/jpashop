@@ -46,5 +46,16 @@
         4) 연관관계 미러 설정
           - @OneToMany(mappedBy = "필드명")  // 1:N + ReadOnly Setting 
           - @OneToOne(mappedBy = "필드명")  // 1:1 + ReadOnly Setting
-    9.엔티티 클래스 개발2
-        
+    9.엔티티 클래스 개발2 - !!! N:N 연관관계는 금지!!!
+        1) N:N 연관관계 설정 >> Owner >> Category Entity
+          - 다대다 연관관계 설정 시 연관테이블 설정 필수
+          - @ManyToMany // N:N는 중간 테이블 생성
+            @JoinTable(name = "category_item",  // 중간 테이블명
+            joinColumns = @JoinColumn(name = "category_id"), // FK
+            inverseJoinColumns = @JoinColumn(name = "item_id")) // FK
+        2) N:N 연관관계 설정 >> ReadOnly >> Item Entity
+          - @ManyToMany(mappedBy = "items")
+        3) 계층 구조, 셀프 양방향 관계 설정 >> Category Entity
+         - 1:N 연관관계 >> Category : List
+        4) 값 타입은 변경 불가능하게 클래스 설계
+         - @Embeddable + 생성자 초기화 

@@ -19,7 +19,7 @@ public class Category {
     private String name;
 
     @ManyToMany // N:N는 중간 테이블 생성
-    @JoinTable(name = "category_item",  // 중간 테이블명
+    @JoinTable(name = "category_item",  // 중간 테이블명 - Owner
             joinColumns = @JoinColumn(name = "category_id"), // FK
             inverseJoinColumns = @JoinColumn(name = "item_id")) // FK
     private List<Item> items = new ArrayList<>();
