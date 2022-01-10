@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy =InheritanceType.SINGLE_TABLE )  // 상속관계 매핑 -> 상속관계 전략 지정, 'SINGLE_TABLE'
 @DiscriminatorColumn(name = "dtype")
-@Getter
+@Getter @Setter
 public abstract class Item {
 
     @Id @GeneratedValue
@@ -21,9 +21,9 @@ public abstract class Item {
 
     private String name;
 
-    private int price;
+    private int price; // 가격
 
-    private int stockQuantity;
+    private int stockQuantity; // 재고량
 
     @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<>();
