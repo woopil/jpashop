@@ -107,3 +107,11 @@
         1) em.persist(); -> 데이터 신규 생성 , em.merge(); 
     17.상품 서비스 개발
         1) save(), findAll(), findOne()
+    18.주문, 주문상품 엔티티 개발
+        1) Order 엔티티 생성 메서드 
+         - public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {...}
+        2) Order 메서드(주문 취소, 전체 주문 가격 조회)
+        3) OrderItem 엔티티 생성 메서드
+         - public static OrderItem createOrderItem(Item item, int orderPrice, int count) {...}
+        4) OrderItem 메서드(감소된 재고량 원복, 주문상품 전체 가격 조회)
+    19.주문 리포지토리 개발
