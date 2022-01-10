@@ -99,3 +99,7 @@
         2) 예외 테스트
          - assertThrows(IllegalStateException.class, () -> memberService.join(member2));
         3) 테스트용 설정 -> test/resources/application.yml
+    15.상품 엔티티 개발(비지니스 로직 추가)
+        1) DDD -> 엔티티내에 비즈니스 로직 설계
+         - 메서드를 이용한 재고량 관리
+        2) Custom Exception 생성 >> RuntimeException 상속 
