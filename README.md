@@ -103,3 +103,6 @@
         1) DDD -> 엔티티내에 비즈니스 로직 설계
          - 메서드를 이용한 재고량 관리
         2) Custom Exception 생성 >> RuntimeException 상속 
+    16.상품 레파지토리
+        1) em.persist(); -> 데이터 신규 생성 , em.merge(); 
+    17.
