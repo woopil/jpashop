@@ -115,3 +115,8 @@
          - public static OrderItem createOrderItem(Item item, int orderPrice, int count) {...}
         4) OrderItem 메서드(감소된 재고량 원복, 주문상품 전체 가격 조회)
     19.주문 리포지토리 개발
+        1) save(), findOne(), findAll() 
+    20.주문 서비스 개발
+        1) 도메인 모델 패턴: 엔티티가 비즈니스 로직을 가지고 객체 지향의 특성을 적극 활용.
+        2) 트랜잭션 스크립트 패턴: 서비스 계층에서 대부분의 비즈니스 로직을 처리하는 것.
+        3) @NoArgsConstructor(access = AccessLevel.PROTECTED) -> 기본 생성자의 접근제어자 protected 
