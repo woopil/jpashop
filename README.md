@@ -94,4 +94,8 @@
     13.회원 서비스 개발 
         1) @Transactional(readOnly = true) > 읽기 전용 메서드 사용
         2) @RequiredArgsConstructor // final 적용된 필드의 생성자 생성 -> 생성자 주입
-        3) @RequiredArgsConstructor // final 적용된 필드의 생성자 생성 -> 생성자 주입
+    14.회원 기능 테스트
+        1) EntityManager em; em.flush() -> 영속성 컨텍스트 반영
+        2) 예외 테스트
+         - assertThrows(IllegalStateException.class, () -> memberService.join(member2));
+        3) 테스트용 설정 -> test/resources/application.yml
