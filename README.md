@@ -92,3 +92,5 @@
         2) em.persists = save(), em.find = find()
         3) JPQL 작성 >> 객체 대상 쿼리
     13.회원 서비스 개발 
+        1) @Transactional(readOnly = true) > 읽기 전용 메서드 사용
+        2) @RequiredArgsConstructor // final 적용된 필드의 생성자 생성 -> 생성자 주입
