@@ -128,3 +128,5 @@
     22.주문 검색 기능 개발
         1) OrderSearch 필드 추가
          - JPA '동적쿼리' 고민 => 'JPA Criteria' 공식 스펙
+    23.홈 화면과 레이아웃
+        1) HomeController -> resources/templates/fragments/~.html -> resources/static/js,css
