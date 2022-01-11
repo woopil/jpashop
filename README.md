@@ -130,3 +130,14 @@
          - JPA '동적쿼리' 고민 => 'JPA Criteria' 공식 스펙
     23.홈 화면과 레이아웃
         1) HomeController -> resources/templates/fragments/~.html -> resources/static/js,css
+    24.회원 등록
+        1) 회원 등록 폼 객체 
+          - @NotEmpty(message = "회원 이름은 필수 입니다")
+        2) 회원 등록 컨트롤러 -> 제약 조건 추가
+          - ( @Valid MemberForm form ) >> valid 적용
+          - BindingResult >> hasErrors() >> return formPage 
+    25.회원 목록 조회
+        1) 회원 목록 화면 등록
+        2) 회원 목록 컨트롤러 -> Model -> return listPage
+    26.상품 등록
+    
