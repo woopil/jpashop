@@ -137,7 +137,12 @@
           - ( @Valid MemberForm form ) >> valid 적용
           - BindingResult >> hasErrors() >> return formPage 
     25.회원 목록 조회
+        * 엔티티는 핵심 비즈니스 로직만 가지고 있고, 화면을 위한 로직은 없어야 한다 => '폼객체 + DTO 사용'
         1) 회원 목록 화면 등록
+          - 타임리프에서 '?' 를 사용하면 null을 무시한다 ex) <td th:text="${member.address?.city}"></td> 
         2) 회원 목록 컨트롤러 -> Model -> return listPage
     26.상품 등록
-    
+        1) 상품 등록 폼 객체 생성 -> 상품 등록 컨트롤러 설계
+    27.상품 목록 조회
+        1) 상품 목록 화면 등록
+        2) 상품 목록 컨트롤러 -> Model -> return listPage
