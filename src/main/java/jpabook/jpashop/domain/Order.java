@@ -19,13 +19,13 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
-    @ManyToOne(fetch = LAZY)  // N:1
-    @JoinColumn(name = "member_id") // FK + Owner Setting
-    private Member member;
-
     // XToOne => FetchType.EAGER 이슈 -> N+1 이슈 (첫 쿼리의 결과 값 = N)
     // FetchType.EAGER -> FetchType.LAZY 로 변경
     // JPQL select o From order o; -> SQL select * from order;
+
+    @ManyToOne(fetch = LAZY)  // N:1
+    @JoinColumn(name = "member_id") // FK + Owner Setting
+    private Member member;
 
     @OneToOne(fetch = LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "delivery_id") // FK + Owner Setting
