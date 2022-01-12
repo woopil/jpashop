@@ -5,6 +5,7 @@ import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import jpabook.jpashop.repository.MemberRepository;
 import jpabook.jpashop.repository.OrderRepository;
+import jpabook.jpashop.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +24,7 @@ public class OrderService {
     /*
     * 주문
     * */
+    @Transactional // 저장 메소드에는 필수 선언
     public Long order(Long memberId, Long itemId, int count) {
 
         // 엔티티 조회
@@ -59,9 +61,9 @@ public class OrderService {
     /*
     * 주문 검색
     * */
-//    public List<Order> findOrders(OrderSearch orderSearch) {
-//        return orderRepository.findALl(orderSearch);
-//    }
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByCriteria(orderSearch);
+    }
 
 }
 
