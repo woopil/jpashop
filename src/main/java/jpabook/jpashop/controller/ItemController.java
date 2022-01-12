@@ -1,7 +1,6 @@
 package jpabook.jpashop.controller;
 
 import jpabook.jpashop.domain.item.Book;
-import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -86,7 +85,6 @@ public class ItemController {
         book.setIsbn(form.getIsbn());
         itemService.saveItem(book);
 */
-
         itemService.updateItem(form.getId(), form.getName(), form.getPrice(), form.getStockQuantity());
 
         return "redirect:/";

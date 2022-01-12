@@ -35,7 +35,6 @@ public class Category {
     private List<Category> child = new ArrayList<>();
 
     // 양방향 연관관계 메서드 //
-
     // Category's List<Category> child add() <-> Category's Category parent set
     public void addChild(Category child) {
         this.child.add(child); // List<Category> child

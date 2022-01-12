@@ -28,7 +28,7 @@ public abstract class Item {
     @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<>();
 
-    //  DDD -> 비지니스 로직을 엔티티내에 처리
+    //  DDD -> 엔티티내에 비즈니스 로직 처리
 
     /*
     * stock 증가
