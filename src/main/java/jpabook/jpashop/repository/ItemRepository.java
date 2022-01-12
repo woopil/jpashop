@@ -14,11 +14,11 @@ public class ItemRepository {
     // Spring Data Jpa Support
     private final EntityManager em; // 생성자 주입
 
-    public void save(Item item) {
+    public void save(Item item) { // 파라미터는 준영속 상태
         if (item.getId() == null) { // id가 없으면 신규로 데이터 생성
             em.persist(item);
         } else {
-            em.merge(item);
+            em.merge(item); // 병합 된 객체는 영속 상태
         }
     }
 

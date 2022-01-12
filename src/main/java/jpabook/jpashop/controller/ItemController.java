@@ -71,20 +71,24 @@ public class ItemController {
     }
 
     /*
-     * 상품 수정
+     * 상품 수정, 권장 코드 리팩토링
      * */
     @PostMapping("/items/{itemId}/edit")
     public String updateItem(@ModelAttribute("form") BookForm form) { // form 태그의 객체 이름
 
-        Book book = new Book();
+        // 컨트롤러단에서 어설프게 엔티티를 생성하지 마라
+/*      Book book = new Book();
         book.setId(form.getId());
         book.setName(form.getName());
         book.setPrice(form.getPrice());
         book.setStockQuantity(form.getStockQuantity());
         book.setAuthor(form.getAuthor());
         book.setIsbn(form.getIsbn());
-
         itemService.saveItem(book);
+*/
+
+        itemService.updateItem(form.getId(), form.getName(), form.getPrice(), form.getStockQuantity());
+
         return "redirect:/";
     }
 
