@@ -86,7 +86,7 @@
          - exception
          - repository
          - service
-         - web
+         - controller
     12.회원 리포지토리 개발
         1) @PersistenceContext EntityManager 객체 생성
         2) em.persists = save(), em.find = find()
