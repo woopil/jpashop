@@ -23,7 +23,8 @@ public class Order {
     @JoinColumn(name = "member_id") // FK + Owner Setting
     private Member member;
 
-    // FetchType.EAGER 문제점 -> N+1 이슈 (첫 쿼리의 결과 값 = N)
+    // XToOne => FetchType.EAGER 이슈 -> N+1 이슈 (첫 쿼리의 결과 값 = N)
+    // FetchType.EAGER -> FetchType.LAZY 로 변경
     // JPQL select o From order o; -> SQL select * from order;
 
     @OneToOne(fetch = LAZY, cascade = CascadeType.ALL)
